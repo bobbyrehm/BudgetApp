@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C51F4C6D23490B300015F85A /* BudgetCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F4C6C23490B300015F85A /* BudgetCategoryCell.swift */; };
 		C5DBBEEC22ED48690000A2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBBEEB22ED48690000A2AB /* AppDelegate.swift */; };
 		C5DBBEEE22ED48690000A2AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBBEED22ED48690000A2AB /* SceneDelegate.swift */; };
 		C5DBBEF022ED48690000A2AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBBEEF22ED48690000A2AB /* ContentView.swift */; };
@@ -15,6 +16,7 @@
 		C5DBBEF822ED486D0000A2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DBBEF622ED486D0000A2AB /* LaunchScreen.storyboard */; };
 		C5DBBF0322ED486E0000A2AB /* BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBBF0222ED486E0000A2AB /* BudgetTests.swift */; };
 		C5DBBF0E22ED486E0000A2AB /* BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBBF0D22ED486E0000A2AB /* BudgetUITests.swift */; };
+		C5F3E9F5234701C900C3AB31 /* BudgetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F3E9F4234701C900C3AB31 /* BudgetCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C51F4C6C23490B300015F85A /* BudgetCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoryCell.swift; sourceTree = "<group>"; };
 		C5DBBEE822ED48690000A2AB /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DBBEEB22ED48690000A2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DBBEED22ED48690000A2AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		C5DBBF0922ED486E0000A2AB /* BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DBBF0D22ED486E0000A2AB /* BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITests.swift; sourceTree = "<group>"; };
 		C5DBBF0F22ED486E0000A2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5F3E9F4234701C900C3AB31 /* BudgetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				C5DBBEEB22ED48690000A2AB /* AppDelegate.swift */,
 				C5DBBEED22ED48690000A2AB /* SceneDelegate.swift */,
 				C5DBBEEF22ED48690000A2AB /* ContentView.swift */,
+				C51F4C6C23490B300015F85A /* BudgetCategoryCell.swift */,
+				C5F3E9F4234701C900C3AB31 /* BudgetCategory.swift */,
 				C5DBBEF122ED486D0000A2AB /* Assets.xcassets */,
 				C5DBBEF622ED486D0000A2AB /* LaunchScreen.storyboard */,
 				C5DBBEF922ED486D0000A2AB /* Info.plist */,
@@ -268,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DBBEEC22ED48690000A2AB /* AppDelegate.swift in Sources */,
+				C51F4C6D23490B300015F85A /* BudgetCategoryCell.swift in Sources */,
 				C5DBBEEE22ED48690000A2AB /* SceneDelegate.swift in Sources */,
+				C5F3E9F5234701C900C3AB31 /* BudgetCategory.swift in Sources */,
 				C5DBBEF022ED48690000A2AB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,10 +442,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "Budget/Preview\\ Content";
 				DEVELOPMENT_TEAM = 2XQ2E77FT5;
 				ENABLE_PREVIEWS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = Budget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,10 +464,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "Budget/Preview\\ Content";
 				DEVELOPMENT_TEAM = 2XQ2E77FT5;
 				ENABLE_PREVIEWS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = Budget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

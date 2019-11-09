@@ -9,15 +9,31 @@
 import SwiftUI
 
 struct ContentView : View {
+    
+    var budgets: [BudgetCategory]
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                ForEach(budgets) { budget in
+                    BudgetCategoryCell(budget: budget)
+                }
+            }
+            .navigationBarTitle("Budgets")
+            .navigationBarItems(trailing: Button(action: {
+                print("Tapped me!")
+            }, label: {
+                Image(systemName: "plus").font(Font.system(.title))
+            }))
+        }
     }
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        ContentView(budgets: testBudgets)
     }
 }
 #endif
