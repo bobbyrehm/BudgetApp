@@ -17,11 +17,13 @@ extension BudgetPeriod {
     
     var daysRemaining: Int {
         let currentDate = Date()
-        return Int(ceil((endDate ?? Date()).distance(to: currentDate) / 24 / 60 / 60))
+        return Int(currentDate.distance(to: endDate ?? Date()) / 24 / 60 / 60)
     }
     
     static func allBudgetPeriodsFetchRequest() -> NSFetchRequest<BudgetPeriod> {
-        let request: NSFetchRequest<BudgetPeriod> = BudgetPeriod.fetchRequest() as! NSFetchRequest<BudgetPeriod>
+        guard let request: NSFetchRequest<BudgetPeriod> = BudgetPeriod.fetchRequest() as? NSFetchRequest<BudgetPeriod> else {
+            fatalError("Unable to instantiate BudgetPeriod fetch request.")
+        }
         request.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: true)]
         return request
     }

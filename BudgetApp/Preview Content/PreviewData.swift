@@ -39,9 +39,9 @@ struct PreviewData {
         user.email = "bobbyrehm502@gmail.com"
         
         groceriesBudget = Budget(name: "Groceries", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
-        goingOutBudget = Budget(name: "Groceries", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
-        clothesBudget = Budget(name: "Groceries", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
-        miscBudget = Budget(name: "Groceries", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        goingOutBudget = Budget(name: "Going Out", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        clothesBudget = Budget(name: "Clothes", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        miscBudget = Budget(name: "Misc", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
         
         for budget in [groceriesBudget, goingOutBudget, clothesBudget, miscBudget] {
             budget.addBudgetPeriod()

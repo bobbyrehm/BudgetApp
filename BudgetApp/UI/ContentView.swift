@@ -11,23 +11,9 @@ import CoreData
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @FetchRequest(fetchRequest: BudgetPeriod.allBudgetPeriodsFetchRequest()) var budgetPeriods: FetchedResults<BudgetPeriod>
-    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(budgetPeriods) { budgetPeriod in
-                    BudgetCategoryCell(budgetPeriod: budgetPeriod)
-                }
-            }
-            .navigationBarTitle("Budgets")
-            .navigationBarItems(trailing: Button(action: {
-                print("Tapped me!")
-            }, label: {
-                Image(systemName: "plus").font(Font.system(.title))
-            }))
+            CurrentBudgetPeriodsView(viewModel: CurrentBudgetPeriodsViewModel(budgetPeriods: []))
         }
     }
 }

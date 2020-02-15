@@ -39,6 +39,14 @@ final class CoreDataManager: ObservableObject {
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
         
+        // Start with a clean slate for development purposes
+        do {
+            try persistentStoreCoordinator.destroyPersistentStore(at: persistentStoreURL, ofType: NSSQLiteStoreType, options: nil)
+        }
+        catch let error {
+            fatalError("Failed to destroy persistent store: \(error.localizedDescription)")
+        }
+        
         do {
             let options = [
                 NSMigratePersistentStoresAutomaticallyOption: true,
@@ -58,5 +66,29 @@ final class CoreDataManager: ObservableObject {
     init(modelName: String) {
         
         self.modelName = modelName
+    }
+    
+    // MARK: - Public Methods
+    
+    func setUpTestData() {
+        
+        let user = User(context: managedObjectContext)
+        user.firstName = "Bobby"
+        user.lastName = "Rehm"
+        user.username = "brehm"
+        user.password = "password"
+        user.email = "bobbyrehm502@gmail.com"
+        
+        let groceriesBudget = Budget(name: "Groceries", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        let goingOutBudget = Budget(name: "Going Out", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        let clothesBudget = Budget(name: "Clothes", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        let miscBudget = Budget(name: "Misc", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
+        
+        for budget in [groceriesBudget, goingOutBudget, clothesBudget, miscBudget] {
+            budget.addBudgetPeriod()
+            budget.user = user
+        }
+        
+        try? managedObjectContext.save()
     }
 }
