@@ -11,4 +11,7 @@ import CoreData
 
 extension User {
     
+    var currentBudgetPeriods: [BudgetPeriod] {
+        budgets.compactMap { $0.currentBudgetPeriod }
+    }
 }

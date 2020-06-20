@@ -30,7 +30,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             _ = coreDataManager.managedObjectContext
             self.coreDataManager = coreDataManager
             coreDataManager.setUpTestData()
-            window.rootViewController = UIHostingController(rootView: ContentView().environment(\.managedObjectContext, coreDataManager.managedObjectContext))
+            
+            guard let currentUser = coreDataManager.fetchObject(entity: User.self) else {
+                fatalError("Current User not found.")
+            }
+            
+            let contentView = ContentView()
+                .environment(\.managedObjectContext, coreDataManager.managedObjectContext)
+                .environmentObject(coreDataManager)
+                .environmentObject(currentUser)
+            
+            window.rootViewController = UIHostingController(rootView: contentView)
             
             self.window = window
             window.makeKeyAndVisible()

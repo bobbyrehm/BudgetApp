@@ -22,6 +22,7 @@ final class CoreDataManager: ObservableObject {
     }()
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
+        
         guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else {
             fatalError("Unable to Find Data Model")
         }
@@ -34,6 +35,7 @@ final class CoreDataManager: ObservableObject {
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         let storeName = "\(modelName).sqlite"
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -61,7 +63,7 @@ final class CoreDataManager: ObservableObject {
         return persistentStoreCoordinator
     }()
     
-    // MARK: - Initialization
+    // MARK: - Init
     
     init(modelName: String) {
         
@@ -90,5 +92,33 @@ final class CoreDataManager: ObservableObject {
         }
         
         try? managedObjectContext.save()
+    }
+    
+    func fetchObject<T: NSManagedObject>(entity: T.Type) -> T? {
+        
+        let request = NSFetchRequest<T>(entityName: String(describing: entity))
+        
+        request.fetchLimit = 1
+        
+        do {
+            return try managedObjectContext.fetch(request).first
+        }
+        catch {
+            print("Error fetching object: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func fetchObjects<T: NSManagedObject>(entity: T.Type) -> [T] {
+        
+        let request = NSFetchRequest<T>(entityName: String(describing: entity))
+        
+        do {
+            return try managedObjectContext.fetch(request)
+        }
+        catch {
+            print("Error fetching objects: \(error.localizedDescription)")
+            return []
+        }
     }
 }

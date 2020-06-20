@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6ADFF7BF5266EAC5F253E43A /* Pods_BudgetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F906BE786BEEBCC56BD768 /* Pods_BudgetApp.framework */; };
 		96DF3C4823F874F0005C0269 /* CurrentBudgetPeriodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */; };
-		96DF3C4A23F87871005C0269 /* CurrentBudgetPeriodsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF3C4923F87871005C0269 /* CurrentBudgetPeriodsViewModel.swift */; };
 		96DF3C4F23F87F60005C0269 /* BudgetPeriodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF3C4E23F87F60005C0269 /* BudgetPeriodCellViewModel.swift */; };
 		B35EAE3E2F2A29EDFEDC2EB2 /* Pods_BudgetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2660A66F8570DE94274CEB6A /* Pods_BudgetAppTests.framework */; };
 		C51F4C6D23490B300015F85A /* BudgetPeriodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F4C6C23490B300015F85A /* BudgetPeriodCell.swift */; };
@@ -62,7 +61,6 @@
 		2660A66F8570DE94274CEB6A /* Pods_BudgetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9327BCFF7507F8113512ADE5 /* Pods-BudgetApp-BudgetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp-BudgetAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-BudgetApp-BudgetAppUITests/Pods-BudgetApp-BudgetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBudgetPeriodsView.swift; sourceTree = "<group>"; };
-		96DF3C4923F87871005C0269 /* CurrentBudgetPeriodsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBudgetPeriodsViewModel.swift; sourceTree = "<group>"; };
 		96DF3C4E23F87F60005C0269 /* BudgetPeriodCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPeriodCellViewModel.swift; sourceTree = "<group>"; };
 		99C0CCF9FEB43265DEC4BBE9 /* Pods-BudgetApp-BudgetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp-BudgetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BudgetApp-BudgetAppUITests/Pods-BudgetApp-BudgetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B861ED0AD400082786F0ED41 /* Pods-BudgetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp.debug.xcconfig"; path = "Target Support Files/Pods-BudgetApp/Pods-BudgetApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,15 +149,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		96DF3C4B23F878BF005C0269 /* CurrentBudgetPeriodsView */ = {
-			isa = PBXGroup;
-			children = (
-				96DF3C4923F87871005C0269 /* CurrentBudgetPeriodsViewModel.swift */,
-				96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */,
-			);
-			path = CurrentBudgetPeriodsView;
-			sourceTree = "<group>";
-		};
 		96DF3C5023F880BB005C0269 /* BudgetPeriodCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DBBEEF22ED48690000A2AB /* ContentView.swift */,
-				96DF3C4B23F878BF005C0269 /* CurrentBudgetPeriodsView */,
+				96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */,
 				96DF3C5023F880BB005C0269 /* BudgetPeriodCell */,
 			);
 			path = UI;
@@ -515,7 +504,6 @@
 				C51F4C6D23490B300015F85A /* BudgetPeriodCell.swift in Sources */,
 				C5D43E49238AD4FB009DE7C2 /* BudgetPeriod+CoreDataExtension.swift in Sources */,
 				C5D43E47238AD422009DE7C2 /* Budget+CoreDataExtension.swift in Sources */,
-				96DF3C4A23F87871005C0269 /* CurrentBudgetPeriodsViewModel.swift in Sources */,
 				C5DBBEEE22ED48690000A2AB /* SceneDelegate.swift in Sources */,
 				C5D43E53238ADA5D009DE7C2 /* User+CoreDataClass.swift in Sources */,
 				C5D43E5B238ADBA6009DE7C2 /* User+CoreDataExtension.swift in Sources */,

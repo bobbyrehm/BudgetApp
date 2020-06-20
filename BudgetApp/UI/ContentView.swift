@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            CurrentBudgetPeriodsView(viewModel: CurrentBudgetPeriodsViewModel(budgetPeriods: []))
+            CurrentBudgetPeriodsView()
         }
     }
 }
@@ -24,7 +24,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .environment(\.managedObjectContext, PreviewData().managedObjectContext)
+                .environment(\.managedObjectContext, previewData.managedObjectContext)
         }
     }
 }
