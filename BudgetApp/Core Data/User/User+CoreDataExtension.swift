@@ -12,6 +12,7 @@ import CoreData
 extension User {
     
     var currentBudgetPeriods: [BudgetPeriod] {
-        budgets.compactMap { $0.currentBudgetPeriod }
+        budgets.compactMap { $0.currentBudgetPeriod }.sorted(by: { lhs, rhs in
+            lhs.startDate?.timeIntervalSinceReferenceDate ?? 0 > rhs.startDate?.timeIntervalSinceReferenceDate ?? 0 })
     }
 }

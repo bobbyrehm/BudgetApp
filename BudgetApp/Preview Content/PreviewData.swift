@@ -48,6 +48,10 @@ struct PreviewData {
             budget.user = user
         }
         
+        for budgetPeriod in user.currentBudgetPeriods {
+            budgetPeriod.addExpense()
+        }
+        
         try? coreDataManager.managedObjectContext.save()
     }
 }

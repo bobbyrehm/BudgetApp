@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TimePeriodUnit: String {
+enum TimePeriodUnit: String, CaseIterable {
     
     case day = "day"
     case week = "week"

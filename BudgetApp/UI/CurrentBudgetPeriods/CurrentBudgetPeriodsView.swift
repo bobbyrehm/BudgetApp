@@ -17,7 +17,9 @@ struct CurrentBudgetPeriodsView: View {
     var body: some View {
         List {
             ForEach(user.currentBudgetPeriods) { budgetPeriod in
-                BudgetPeriodCell(viewModel: BudgetPeriodCellViewModel(budgetPeriod: budgetPeriod))
+                NavigationLink(destination: ExpensesView(budgetPeriod: budgetPeriod)) {
+                    BudgetPeriodCell(budgetPeriod: budgetPeriod)
+                }
             }
         }
         .navigationBarTitle("Budgets")
@@ -29,9 +31,6 @@ struct CurrentBudgetPeriodsView: View {
     
     func addButtonTapped() {
         
-        let newBudget = Budget(name: "Test Budget", resetFrequency: TimePeriod(unit: .month, quantity: 1), managedObjectContext: managedObjectContext)
-        newBudget.addBudgetPeriod()
-        newBudget.user = user
     }
 }
 

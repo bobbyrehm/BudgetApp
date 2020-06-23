@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Expense: NSManagedObject {
+class Expense: NSManagedObject, Identifiable {
     
     @NSManaged var amount: NSNumber?
     @NSManaged var date: Date?

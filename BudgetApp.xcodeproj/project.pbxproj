@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		6ADFF7BF5266EAC5F253E43A /* Pods_BudgetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F906BE786BEEBCC56BD768 /* Pods_BudgetApp.framework */; };
 		96DF3C4823F874F0005C0269 /* CurrentBudgetPeriodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */; };
-		96DF3C4F23F87F60005C0269 /* BudgetPeriodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DF3C4E23F87F60005C0269 /* BudgetPeriodCellViewModel.swift */; };
 		B35EAE3E2F2A29EDFEDC2EB2 /* Pods_BudgetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2660A66F8570DE94274CEB6A /* Pods_BudgetAppTests.framework */; };
+		C50CA01C249DAD6A009A8F57 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50CA01B249DAD6A009A8F57 /* ExpensesView.swift */; };
+		C50CA01F249DAF7E009A8F57 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50CA01E249DAF7E009A8F57 /* Formatters.swift */; };
+		C50CA022249DAFFB009A8F57 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50CA021249DAFFB009A8F57 /* ExpenseCell.swift */; };
+		C50CA024249DB12F009A8F57 /* Optional+DescriptionOrNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50CA023249DB12F009A8F57 /* Optional+DescriptionOrNil.swift */; };
 		C51F4C6D23490B300015F85A /* BudgetPeriodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F4C6C23490B300015F85A /* BudgetPeriodCell.swift */; };
 		C52DB3D523EA7D4E00AB7D5F /* BudgetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C52DB3D323EA7D4E00AB7D5F /* BudgetApp.xcdatamodeld */; };
 		C576DF9F237E63930032A644 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576DF9E237E63930032A644 /* TimePeriod.swift */; };
 		C576DFA1237E67E70032A644 /* RawTimePeriod+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576DFA0237E67E70032A644 /* RawTimePeriod+CoreDataExtension.swift */; };
 		C576DFA3238046B00032A644 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576DFA2238046B00032A644 /* CoreDataManager.swift */; };
 		C585749623E523F9004772FA /* BudgetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C585749523E523F9004772FA /* BudgetAppTests.swift */; };
+		C58B4A3B24A068C800259714 /* AddBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B4A3A24A068C800259714 /* AddBudgetView.swift */; };
 		C5922C45238F7050002AB57F /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5922C44238F7050002AB57F /* PreviewData.swift */; };
 		C5D43E47238AD422009DE7C2 /* Budget+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D43E46238AD422009DE7C2 /* Budget+CoreDataExtension.swift */; };
 		C5D43E49238AD4FB009DE7C2 /* BudgetPeriod+CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D43E48238AD4FB009DE7C2 /* BudgetPeriod+CoreDataExtension.swift */; };
@@ -61,9 +65,12 @@
 		2660A66F8570DE94274CEB6A /* Pods_BudgetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9327BCFF7507F8113512ADE5 /* Pods-BudgetApp-BudgetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp-BudgetAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-BudgetApp-BudgetAppUITests/Pods-BudgetApp-BudgetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBudgetPeriodsView.swift; sourceTree = "<group>"; };
-		96DF3C4E23F87F60005C0269 /* BudgetPeriodCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPeriodCellViewModel.swift; sourceTree = "<group>"; };
 		99C0CCF9FEB43265DEC4BBE9 /* Pods-BudgetApp-BudgetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp-BudgetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BudgetApp-BudgetAppUITests/Pods-BudgetApp-BudgetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B861ED0AD400082786F0ED41 /* Pods-BudgetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp.debug.xcconfig"; path = "Target Support Files/Pods-BudgetApp/Pods-BudgetApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C50CA01B249DAD6A009A8F57 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		C50CA01E249DAF7E009A8F57 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		C50CA021249DAFFB009A8F57 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		C50CA023249DB12F009A8F57 /* Optional+DescriptionOrNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+DescriptionOrNil.swift"; sourceTree = "<group>"; };
 		C51F4C6C23490B300015F85A /* BudgetPeriodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPeriodCell.swift; sourceTree = "<group>"; };
 		C52DB3D423EA7D4E00AB7D5F /* BudgetApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetApp.xcdatamodel; sourceTree = "<group>"; };
 		C541F10423790A7B00E25AEF /* BudgetApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BudgetApp.entitlements; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 		C576DFA0237E67E70032A644 /* RawTimePeriod+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawTimePeriod+CoreDataExtension.swift"; sourceTree = "<group>"; };
 		C576DFA2238046B00032A644 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C585749523E523F9004772FA /* BudgetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAppTests.swift; sourceTree = "<group>"; };
+		C58B4A3A24A068C800259714 /* AddBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetView.swift; sourceTree = "<group>"; };
 		C5922C44238F7050002AB57F /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		C5D43E46238AD422009DE7C2 /* Budget+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataExtension.swift"; sourceTree = "<group>"; };
 		C5D43E48238AD4FB009DE7C2 /* BudgetPeriod+CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetPeriod+CoreDataExtension.swift"; sourceTree = "<group>"; };
@@ -149,13 +157,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		96DF3C5023F880BB005C0269 /* BudgetPeriodCell */ = {
+		C50CA01D249DAF47009A8F57 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				96DF3C4E23F87F60005C0269 /* BudgetPeriodCellViewModel.swift */,
+				C50CA01E249DAF7E009A8F57 /* Formatters.swift */,
+				C50CA023249DB12F009A8F57 /* Optional+DescriptionOrNil.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C50CA025249DBB27009A8F57 /* CurrentBudgetPeriods */ = {
+			isa = PBXGroup;
+			children = (
+				96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */,
 				C51F4C6C23490B300015F85A /* BudgetPeriodCell.swift */,
 			);
-			path = BudgetPeriodCell;
+			path = CurrentBudgetPeriods;
+			sourceTree = "<group>";
+		};
+		C50CA026249DBB38009A8F57 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				C50CA01B249DAD6A009A8F57 /* ExpensesView.swift */,
+				C50CA021249DAFFB009A8F57 /* ExpenseCell.swift */,
+			);
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 		C541F10823790E3700E25AEF /* Core Data */ = {
@@ -176,8 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				C5DBBEEF22ED48690000A2AB /* ContentView.swift */,
-				96DF3C4723F874F0005C0269 /* CurrentBudgetPeriodsView.swift */,
-				96DF3C5023F880BB005C0269 /* BudgetPeriodCell */,
+				C50CA025249DBB27009A8F57 /* CurrentBudgetPeriods */,
+				C50CA026249DBB38009A8F57 /* Expenses */,
+				C58B4A3A24A068C800259714 /* AddBudgetView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -259,6 +286,7 @@
 				C5DBBEF122ED486D0000A2AB /* Assets.xcassets */,
 				C5DBBEF622ED486D0000A2AB /* LaunchScreen.storyboard */,
 				C5DBBEF922ED486D0000A2AB /* Info.plist */,
+				C50CA01D249DAF47009A8F57 /* Utilities */,
 				C541F10823790E3700E25AEF /* Core Data */,
 				C585749423E51B4C004772FA /* UI */,
 				C5DBBEF322ED486D0000A2AB /* Preview Content */,
@@ -499,7 +527,10 @@
 			files = (
 				C5D43E4F238AD992009DE7C2 /* Expense+CoreDataClass.swift in Sources */,
 				C52DB3D523EA7D4E00AB7D5F /* BudgetApp.xcdatamodeld in Sources */,
+				C50CA01F249DAF7E009A8F57 /* Formatters.swift in Sources */,
+				C50CA024249DB12F009A8F57 /* Optional+DescriptionOrNil.swift in Sources */,
 				C5DBBEEC22ED48690000A2AB /* AppDelegate.swift in Sources */,
+				C58B4A3B24A068C800259714 /* AddBudgetView.swift in Sources */,
 				C5922C45238F7050002AB57F /* PreviewData.swift in Sources */,
 				C51F4C6D23490B300015F85A /* BudgetPeriodCell.swift in Sources */,
 				C5D43E49238AD4FB009DE7C2 /* BudgetPeriod+CoreDataExtension.swift in Sources */,
@@ -507,12 +538,13 @@
 				C5DBBEEE22ED48690000A2AB /* SceneDelegate.swift in Sources */,
 				C5D43E53238ADA5D009DE7C2 /* User+CoreDataClass.swift in Sources */,
 				C5D43E5B238ADBA6009DE7C2 /* User+CoreDataExtension.swift in Sources */,
+				C50CA01C249DAD6A009A8F57 /* ExpensesView.swift in Sources */,
 				C5D43E58238ADB86009DE7C2 /* Expense+CoreDataExtension.swift in Sources */,
-				96DF3C4F23F87F60005C0269 /* BudgetPeriodCellViewModel.swift in Sources */,
 				C5D43E4B238AD6A9009DE7C2 /* Budget+CoreDataClass.swift in Sources */,
 				C576DFA1237E67E70032A644 /* RawTimePeriod+CoreDataExtension.swift in Sources */,
 				C5D43E4D238AD90E009DE7C2 /* BudgetPeriod+CoreDataClass.swift in Sources */,
 				C5DBBEF022ED48690000A2AB /* ContentView.swift in Sources */,
+				C50CA022249DAFFB009A8F57 /* ExpenseCell.swift in Sources */,
 				C576DFA3238046B00032A644 /* CoreDataManager.swift in Sources */,
 				96DF3C4823F874F0005C0269 /* CurrentBudgetPeriodsView.swift in Sources */,
 				C5D43E51238AD9EB009DE7C2 /* RawTimePeriod+CoreDataClass.swift in Sources */,

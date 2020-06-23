@@ -11,8 +11,8 @@ import CoreData
 
 extension BudgetPeriod {
     
-    var totalExpenses: Float {
-        expenses.compactMap { $0.amount.flatMap { Float(truncating: $0) } }.reduce(0, +)
+    var totalExpenses: Double {
+        expenses.compactMap { $0.amount.flatMap { Double(truncating: $0) } }.reduce(0, +)
     }
     
     var daysRemaining: Int {
@@ -20,11 +20,17 @@ extension BudgetPeriod {
         return Int(currentDate.distance(to: endDate ?? Date()) / 24 / 60 / 60)
     }
     
-    static func allBudgetPeriodsFetchRequest() -> NSFetchRequest<BudgetPeriod> {
-        guard let request: NSFetchRequest<BudgetPeriod> = BudgetPeriod.fetchRequest() as? NSFetchRequest<BudgetPeriod> else {
-            fatalError("Unable to instantiate BudgetPeriod fetch request.")
+    func addExpense() {
+        
+        guard let managedObjectContext = managedObjectContext else {
+            fatalError("Cannot add an expense without a managedObjectContext.")
         }
-        request.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: true)]
-        return request
+        
+        let newExpense = Expense(context: managedObjectContext)
+        newExpense.amount = NSNumber(value: 54.88)
+        newExpense.budgetPeriod = self
+        newExpense.name = "Grocery Outlet"
+        newExpense.details = "We bought lots of groceries today!"
+        newExpense.date = Date()
     }
 }
