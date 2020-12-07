@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-#if DEBUG
-
 let previewData = PreviewData()
 
 struct PreviewData {
@@ -49,11 +47,9 @@ struct PreviewData {
         }
         
         for budgetPeriod in user.currentBudgetPeriods {
-            budgetPeriod.addExpense()
+            budgetPeriod.addExpense(amount: 23.99, date: Date(), name: "Grocery Outlet", details: "Test details here.")
         }
         
         try? coreDataManager.managedObjectContext.save()
     }
 }
-
-#endif

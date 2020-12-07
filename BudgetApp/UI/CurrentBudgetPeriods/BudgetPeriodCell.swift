@@ -45,7 +45,6 @@ struct BudgetPeriodCell: View {
     }
 }
 
-#if DEBUG
 struct BudgetPeriodCell_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -55,4 +54,3 @@ struct BudgetPeriodCell_Previews: PreviewProvider {
         }
     }
 }
-#endif

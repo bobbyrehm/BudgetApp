@@ -15,6 +15,8 @@ struct ExpensesView: View {
     
     @ObservedObject var budgetPeriod: BudgetPeriod
     
+    @State var isPresentingAddExpense = false
+    
     var body: some View {
         List {
             ForEach(Array(budgetPeriod.expenses)) { expense in
@@ -26,14 +28,16 @@ struct ExpensesView: View {
             Image(systemName: "plus")
                 .font(.system(.title))
         })
+        .sheet(isPresented: $isPresentingAddExpense) {
+            AddExpenseView(budgetPeriod: budgetPeriod)
+        }
     }
     
     func addButtonTapped() {
-        budgetPeriod.addExpense()
+        isPresentingAddExpense = true
     }
 }
 
-#if DEBUG
 struct ExpensesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -41,4 +45,3 @@ struct ExpensesView_Previews: PreviewProvider {
         }
     }
 }
-#endif

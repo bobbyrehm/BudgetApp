@@ -13,6 +13,8 @@ struct CurrentBudgetPeriodsView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @EnvironmentObject var user: User
+    
+    @State var isPresentingAddBudget = false
         
     var body: some View {
         List {
@@ -27,14 +29,18 @@ struct CurrentBudgetPeriodsView: View {
             Image(systemName: "plus")
                 .font(.system(.title))
         })
+        .sheet(isPresented: $isPresentingAddBudget) {
+            AddBudgetContainerView()
+                .environmentObject(user)
+                .environment(\.managedObjectContext, managedObjectContext)
+        }
     }
     
     func addButtonTapped() {
-        
+        isPresentingAddBudget = true
     }
 }
 
-#if DEBUG
 struct CurrentBudgetPeriodsView_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -46,4 +52,3 @@ struct CurrentBudgetPeriodsView_Previews: PreviewProvider {
         }
     }
 }
-#endif

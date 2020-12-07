@@ -10,10 +10,10 @@ import Foundation
 
 enum TimePeriodUnit: String, CaseIterable {
     
-    case day = "day"
-    case week = "week"
-    case month = "month"
-    case year = "year"
+    case day
+    case week
+    case month
+    case year
     
     var timeInterval: TimeInterval {
         let dayTimeInterval: TimeInterval = 60 * 60 * 24

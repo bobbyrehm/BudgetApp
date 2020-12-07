@@ -20,17 +20,17 @@ extension BudgetPeriod {
         return Int(currentDate.distance(to: endDate ?? Date()) / 24 / 60 / 60)
     }
     
-    func addExpense() {
+    func addExpense(amount: Double, date: Date, name: String?, details: String?) {
         
         guard let managedObjectContext = managedObjectContext else {
             fatalError("Cannot add an expense without a managedObjectContext.")
         }
         
         let newExpense = Expense(context: managedObjectContext)
-        newExpense.amount = NSNumber(value: 54.88)
+        newExpense.amount = NSNumber(value: amount)
         newExpense.budgetPeriod = self
-        newExpense.name = "Grocery Outlet"
-        newExpense.details = "We bought lots of groceries today!"
-        newExpense.date = Date()
+        newExpense.name = name
+        newExpense.details = details
+        newExpense.date = date
     }
 }

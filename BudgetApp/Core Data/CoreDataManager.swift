@@ -42,12 +42,12 @@ final class CoreDataManager: ObservableObject {
         let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
         
         // Start with a clean slate for development purposes
-        do {
-            try persistentStoreCoordinator.destroyPersistentStore(at: persistentStoreURL, ofType: NSSQLiteStoreType, options: nil)
-        }
-        catch let error {
-            fatalError("Failed to destroy persistent store: \(error.localizedDescription)")
-        }
+//        do {
+//            try persistentStoreCoordinator.destroyPersistentStore(at: persistentStoreURL, ofType: NSSQLiteStoreType, options: nil)
+//        }
+//        catch let error {
+//            fatalError("Failed to destroy persistent store: \(error.localizedDescription)")
+//        }
         
         do {
             let options = [
@@ -62,6 +62,10 @@ final class CoreDataManager: ObservableObject {
         
         return persistentStoreCoordinator
     }()
+    
+    var currentUser: User {
+        fetchObject(entity: User.self) ?? User(context: managedObjectContext)
+    }
     
     // MARK: - Init
     

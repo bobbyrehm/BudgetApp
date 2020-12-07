@@ -12,20 +12,17 @@ import CoreData
 struct ContentView: View {
     
     var body: some View {
-        NavigationView {
-            CurrentBudgetPeriodsView()
-        }
+        AppTabNavigation()
     }
 }
 
-#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
             ContentView()
                 .environment(\.managedObjectContext, previewData.managedObjectContext)
+                .environmentObject(PreviewData().user)
         }
     }
 }
-#endif

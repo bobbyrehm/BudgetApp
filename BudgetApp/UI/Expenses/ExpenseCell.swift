@@ -64,11 +64,9 @@ struct ExpenseCell: View {
     }
 }
 
-#if DEBUG
 struct ExpenseCell_Previews: PreviewProvider {
     static var previews: some View {
         ExpenseCell(expense: previewData.clothesBudget.currentBudgetPeriod!.expenses.first!)
             .previewLayout(.fixed(width: 320, height: 50))
     }
 }
-#endif

@@ -12,6 +12,7 @@ struct Formatters {
     
     static var currency: NumberFormatter = {
         let currencyFormatter = NumberFormatter()
+        currencyFormatter.isLenient = true
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = .autoupdatingCurrent
