@@ -15,7 +15,6 @@ struct AddExpenseView: View {
     var budgetPeriod: BudgetPeriod
     
     @State var expenseName = ""
-    @State var expenseDetails = ""
     @State var date = Date()
     @State var amount: Double? = 0.0
     
@@ -23,23 +22,18 @@ struct AddExpenseView: View {
         NavigationView {
             VStack {
                 
-                VStack(alignment: .leading) {
-                    TextField("Name", text: $expenseName)
-                        .font(.headline)
-                        .multilineTextAlignment(.leading)
-                        .padding(10)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(6.0)
-                }
-                
                 HStack {
                     TextField("$0.00", value: $amount, formatter: Formatters.currency)
                         .font(.largeTitle)
                         .keyboardType(.decimalPad)
                     DatePicker("", selection: $date, displayedComponents: .date)
                 }
-                TextField("Expense Details", text: $expenseDetails)
-                    .font(.body)
+                TextField("Name", text: $expenseName)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .padding(10)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(6.0)
                 Spacer()
             }
             .padding()
@@ -50,7 +44,7 @@ struct AddExpenseView: View {
     
     func addExpense() {
         
-        budgetPeriod.addExpense(amount: amount ?? 0.0, date: date, name: expenseName, details: expenseDetails)
+        budgetPeriod.addExpense(amount: amount ?? 0.0, date: date, name: expenseName, details: "")
         
         dismiss()
     }
